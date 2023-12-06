@@ -1,0 +1,3 @@
+Questo progetto, è stato creato per perfezionare le mie abilità di programmazione in Java.
+
+Si tratta di un videogioco testuale, in cui utilizzo vari metodi della programmazione ad Oggetti, ancora in fase di sviluppo e di perfezionamento...
