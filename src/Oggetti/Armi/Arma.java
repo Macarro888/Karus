@@ -39,7 +39,7 @@ public class Arma {
         this.integrita = integrita;
     }
 
-    //-----------------------|Metodi|-----------------------
+    //-----------------------|Metodi|------------------------
 
     public int attacco (){
         return getDanno_arma();
