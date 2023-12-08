@@ -41,4 +41,7 @@ public class Arma {
 
     //-----------------------|Metodi|-----------------------
 
+    public int attacco (){
+        return getDanno_arma();
+    } // questo metodo permette l'attacco con quell'arma
 }

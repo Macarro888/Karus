@@ -71,8 +71,8 @@ public class Giocatore {
 
 // - Il metodo di attacco del giocatore
     public void attacco(String nome_nemico,int vita_nemico){
-    System.out.println("Hai inflitto a "+nome_nemico+" un danno di "+ Arma_giocatore.getDanno_arma());
-        vita_nemico = vita_nemico - Arma_giocatore.getDanno_arma();
+    System.out.println("Hai inflitto a "+nome_nemico+" un danno di "+ Arma_giocatore.attacco());
+        vita_nemico = vita_nemico - Arma_giocatore.attacco();
         Arma_giocatore.setIntegrita(Arma_giocatore.getIntegrita()-1);
     }
 // - Guadagno e perdita di vita
@@ -107,5 +107,18 @@ public class Giocatore {
     public void guadagnoReputazione (int repu){
         System.out.println("Hai fatto una bell'azione");
         setReputazione(getReputazione()+repu);
+    }
+    public void cambiaArma (Arma nuova_arma){
+        setArma_giocatore(nuova_arma);
+        System.out.println("Nuova arma equipaggiata: "+Arma_giocatore.getNome_arma());
+    }
+
+//------------------|Ispezione Admin|------------------
+
+    public void armaAttuale (){
+        System.out.println("Arma attuale: ");
+        System.out.println("Nome: "+Arma_giocatore.getNome_arma());
+        System.out.println("Danno: "+Arma_giocatore.getDanno_arma());
+        System.out.println("Condizioni: "+Arma_giocatore.getIntegrita());
     }
 }
