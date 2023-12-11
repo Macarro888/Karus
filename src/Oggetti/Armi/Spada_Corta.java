@@ -43,8 +43,4 @@ public class Spada_Corta extends Arma{
 
 // --------------|Metodi|-------------
 
-    @Override
-    public int attacco() {
-        return super.attacco();
-    }
 }

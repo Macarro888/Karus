@@ -1,3 +1,6 @@
+package NPC;
+
+import NPC.NPC_OSTILI.NPC_OSTILI;
 import Oggetti.Armi.Arma;
 
 public class Giocatore {
@@ -7,6 +10,7 @@ public class Giocatore {
     private int denaro; // il denaro che ha
     private int mana; // il mana che possiede
     private int reputazione = 0; // la sua reputazione che di default è 0
+    private boolean vivo = true;
 
     public Giocatore(String nome_giocatore, int punti_salute,int denaro, int mana, int reputazione) {
         this.nome_giocatore = nome_giocatore;
@@ -67,12 +71,21 @@ public class Giocatore {
         this.reputazione = reputazione;
     }
 
-// ---------------|Metodi|------------------
+    public boolean isVivo() {
+        return vivo;
+    }
+
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
+    }
+
+    // ---------------|Metodi|------------------
 
 // - Il metodo di attacco del giocatore
-    public void attacco(String nome_nemico,int vita_nemico){
-    System.out.println("Hai inflitto a "+nome_nemico+" un danno di "+ Arma_giocatore.attacco());
-        vita_nemico = vita_nemico - Arma_giocatore.attacco();
+    public void attacco(NPC_OSTILI Nemico) throws InterruptedException {
+    System.out.println("Hai inflitto a "+Nemico.getNome()+" un danno di "+ Arma_giocatore.getDanno_arma());
+        Thread.sleep(5000);
+        Nemico.subisciDanno(Arma_giocatore.getDanno_arma());
         Arma_giocatore.setIntegrita(Arma_giocatore.getIntegrita()-1);
     }
 // - Guadagno e perdita di vita
@@ -113,6 +126,11 @@ public class Giocatore {
         System.out.println("Nuova arma equipaggiata: "+Arma_giocatore.getNome_arma());
     }
 
+    public void controlloVivo(){
+        if (getPunti_salute()<= 0){
+            setVivo(false);
+        }
+    }
 //------------------|Ispezione Admin|------------------
 
     public void armaAttuale (){
@@ -121,4 +139,14 @@ public class Giocatore {
         System.out.println("Danno: "+Arma_giocatore.getDanno_arma());
         System.out.println("Condizioni: "+Arma_giocatore.getIntegrita());
     }
+
+    public int condizioneArma (){
+        return Arma_giocatore.getIntegrita();
+    }
+
+    public void dannoCondizioneZero (){
+        Arma_giocatore.setDanno_arma(1);
+    }
+
+
 }
