@@ -1,0 +1,30 @@
+*Documentazione Armi*
+
++++ Armi di basso livello
+
++ Spada corta
+  - Danno: 5
+  - Integrita x Danno: 1
++ Spada Lunga
+  - Danno: 10
+  - Integrita x Danno: 5
+
+
++++ Armi di medio livello
+
++ Ascia vikinga
+  - Danno: 15
+  - Integrita x Danno: 5
++ Spadone
+  - Danno: 25
+  - Integrita x Danno: 10
+
++++ Armi di alto livello
+
++ Spada di ossidiana
+  - Danno: 55
+  - Integrita x Danno: 30
+
++ Artigli di pietra nera
+  - Danno: 70
+  - Integrita x Danno: 50
